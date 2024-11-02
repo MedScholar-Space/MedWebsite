@@ -1,0 +1,145 @@
+<!DOCTYPE html >
+{% load static %}
+<html >
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    {% block Links %}{% endblock Links %}
+    
+ 
+  {% block links %}{% endblock links %}
+  
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+   
+<style>#password_change{
+    background-color: rgb(15 140 74);
+    border-color: #fff;
+    color: #fff;
+    transition: .7s;
+    }
+    #password_change:hover{
+      border-color:  rgb(15 140 74);
+    color:  rgb(15 140 74);
+    background-color: #fff;
+
+    }
+    .fonts-link{
+    color: white;
+    font-family: 'Bebas Neue';
+    letter-spacing: 3px;
+}
+body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+.button-fonts{
+  font-family: 'Montserrat';
+}
+.navbar{
+  margin-bottom: 30px;
+}
+.Not-approved{
+  background-image: url('{% static "files/Unapproved.jpg" %}');
+  height: 100vh;
+  color: black;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  place-content: center;
+  text-align: center;
+
+}
+.Not-approved .animate__flash{
+  animation-duration:10s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: infinite;
+
+}
+.Not-approved h1{
+  text-shadow: 0px 0px 20px rgb(245, 245, 245);
+}
+.animate__heartBeat{
+  animation-iteration-count: infinite;
+}
+body{
+        background-attachment: fixed;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+color:white !important;
+background-image: url("{% static 'files/Background-main.jpg' %}");
+    }
+  </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="place-items: center;">
+    
+
+<div id="contains">
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <a id="navbarBrand" class="navbar-brand  button-fonts " style="text-transform:uppercase ;letter-spacing: 2px;" href="{% url 'home' %}">Medschoolar Space</a>
+      <div class="btn-group dropstart">
+       <button type="button" class=" button-fonts btn btn-primary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="button-fonts"> <img width="20px" src="{% static 'files/user.svg' %}"  alt=""> </span>
+       </button>
+       <ul class="dropdown-menu">    
+         <a class="button-fonts dropdown-item disabled" >Salut {{request.user.username}}!</a>
+     
+      <a class="dropdown-item button-fonts" href="{% url 'dashboard' %}">Profile</a>
+       <a class="dropdown-item button-fonts" href="{% url 'password_change' %}"> Changer mot de passe</a> 
+                <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+               <a href="{% url 'logout' %}" ><input class=" button-fonts dropdown-item" type="submit" value="Se déconnecter" ></a>
+              </form> 
+     
+     </a>   </ul>
+     </div>     <div class="offcanvas offcanvas-start    text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+ {% for i in d %}
+ <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ {{i.module}}   </a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item" href="{% url 'quiz_index' %}?categorie={{i.module}}">Exam</a></li>
+      <li>
+       <hr class="dropdown-divider">
+     </li>
+      <li><a class="dropdown-item" href="{% url 'cours' %}?categorie={{i.module}}">Cours</a></li>
+ 
+    </ul>
+  </li>
+ 
+ {% endfor %}
+       
+          </ul>
+ 
+        </div>
+      </div>
+    </div>
+  </nav>
+<br><br><br>
+    <div>{% block content %}{% endblock content %}</div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

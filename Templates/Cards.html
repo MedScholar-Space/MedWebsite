@@ -1,0 +1,529 @@
+{% load static %}
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+:root {
+  --card-bg: #ffffff;
+  --body-bg: #191B1D;
+  --accent: #BC1E4A;
+  --accent-sec: #DC4E6A;
+  --text-color:   black;
+  --check-bg: #999999;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  user-select: none;
+}
+.btn-outline-danger{
+  background-color: #dc3545 !important;
+  color:white !important;
+}
+.btn-outline-danger:hover{
+  background-color: white !important;
+  color:#dc3545 !important;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--body-bg);
+  font-family: 'Lato';
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  box-sizing: content-box;
+  text-align: center;
+  
+  background-color: var(--accent);
+  
+  padding: 20px 50px;
+  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header-title {
+  font-size: 0.8rem;
+}
+
+.header-text {
+  margin-top: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.plans {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  flex-direction: column;
+}
+
+.billing-option {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.billing-desc {
+  font-size: 0.9rem;
+}
+
+.checkbox-input {
+  display: none;
+}
+.checkbox-display {
+  position: relative;
+  
+  width: 45px;
+  height: 25px;
+  
+  background-color: var(--check-bg);
+  
+  margin-left: 15px;
+  margin-right: 15px;
+  
+  border-radius: 45px;
+  
+  transition: 0.3s;
+  
+  cursor: pointer;
+}
+
+.checkbox-display::after {
+  content: '';
+  
+  background-color: black;
+  
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  
+  border-radius: 50%;
+  
+  transition: 0.3s;
+}
+
+.checkbox-input:checked + .checkbox-display {
+  background-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.checkbox-input:checked + .checkbox-display::after {
+  left: 21px;
+}
+
+.cards {
+  margin-top: 30px;
+  
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  
+  grid-template-columns: 1fr 1fr ;
+  column-gap: 20px;
+}
+
+.card-cards {
+  padding: 40px 5px;
+  width: 370px;
+  height: 500px;
+  color: black;
+  background-color: var(--card-bg);
+  
+  border-radius: 7px;
+  
+  display: grid;
+
+}
+
+.card-title {
+  text-align: center;
+  
+  font-size: 1.5rem;
+}
+
+.card-price {
+  text-align: center;
+  
+  margin-top: 15px;
+  font-size: 3rem;
+  
+  font-family: 'Signika';
+}
+
+.card-price.text {
+  margin-top: 25px;
+  font-size: 2.7rem;
+}
+
+.card-price-desc {
+  font-size: 1.5rem;
+}
+
+.card-features-container {
+  display: grid;
+  justify-content:center;
+  align-items: start;
+  
+  }
+
+.card-features {
+  list-style: none;
+}
+
+.card-features li {
+  margin-top: 10px;
+}
+
+.card-features li::before {
+  content: "\2022";
+  color: var(--accent);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.card-btn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-hollow {
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  
+  padding: 10px 50px;
+  
+  transition: 0.3s;
+}
+
+.btn-hollow:hover {
+  background-color: var(--accent-sec);
+  border-color: var(--accent-sec);
+  box-shadow: 0 0 15px var(--accent-sec);
+}
+
+.btn-filled {
+  background-color: var(--accent);
+  border-radius: 5px;
+  
+  padding: 10px 50px;
+  
+  transition: 0.3s;
+}
+
+.btn-filled:hover {
+  background-color: var(--accent-sec);
+  box-shadow: 0 0 15px var(--accent-sec);
+}
+
+@media (max-width: 1240px) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+#special{
+  border-color: red;
+  border-style: solid;
+}
+ul>li{
+  font-size: 20px;
+}
+.card:hover > i{
+  color: white;
+}
+.card:hover{
+background-color: rgb(0, 179, 255);
+box-shadow: 0px 6px 20px rgb(88, 88, 88);
+color: white;
+}
+ul>.fonctionnalités-cards{
+  list-style: "✔️";
+}
+.card{
+  transition: 1s;
+  transition-timing-function: ease;
+}
+@media screen and (min-width:1024px) {
+  .card,.card-body{
+    height: 430px !important;
+  }
+}
+.vertical-line {
+    width: 1px;
+    height: 16px;
+    background-color: rgba(0, 0, 0, 0.215);
+    transform: rotate(0deg);
+}
+</style>
+<br>
+
+    <h3 id="Spécifications" style="text-color:white !important;text-align: center;font-weight: 800;font-size: 45px;" >Spécifications</h3>
+    <div  class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              
+              <center><i style="font-size: 45px;color: #0f7bda;" class="ri-refresh-line"></i></center>
+
+              <h5 class="card-title">Mises à jour</h5>
+              <hr>
+              <ul>
+                <li>  Nouvelles questions ajoutées</li>
+                <br>
+                <li>Fonctionnalités innovantes et optimisées</li>
+                <br>
+                <li>Renforcement des performances</li>
+                <br>
+                <li> Mises à jour de sécurité </li>
+              </ul> 
+              <br>  
+               </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <center><i style="font-size: 45px;color: #0f7bda;" class="ri-align-justify"></i></center>
+
+              <h5 class="card-title">Contenu</h5>
+              <hr>
+              <ul>
+                <li>  Diversité des examens</li>
+                <br>
+                <li> Examen détaillé des questions</li>
+                <br>
+                <li> Précision et fiabilité des réponses </li>
+                <br>
+                <li> Révision et annotation par des experts</li>
+              </ul>            </div>
+          </div>
+        </div>
+      
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <center><i style="font-size: 45px;color: #0f7bda;" class="ri-video-line"></i></center>
+
+              <h5 class="card-title">Videos</h5>
+              <hr>
+              <ul>
+                <li> Intégration de vidéos à la plateforme</li>
+                <br>
+                <li> Sessions de réunion sur Discord</li>
+                <br>
+                <li>Cette option sera accessible lors des prochaines mises à jour.</li>
+         
+              </ul>      <br>       </div>
+          </div>  
+        </div>
+      
+    </div>
+<section style="margin-top: 10pc;" id="Paiment" class="plans">
+
+  <h2 style="text-color:white !important;font-weight: 800;font-size: 60px;">
+    Paiement
+  </h2>
+  <div  class="cards">
+    <div style="height:600px;" class="card-cards">
+      <div class="card-header">
+<div class="card-title">
+  <h1 style="font-weight:800">Standard</h1>
+         <h2> <span  style="color:rgba(0, 0, 0,0.200);font-weight:800;font-family: 'Raleway',sans-serif;"> <del>99</del><sup  style="font-size:15px">dh   </sup></span>
+         </h2> 
+        <center>
+        <div class="vertical-line"></div>
+        </center>
+          
+            <h2 style="color:red;font-family: 'Raleway',sans-serif;""><span >89</span><sup style="font-size:15px">dh</sup>
+              <br>
+              <span style="font-size: 15px;" class="pricing-el-small">/Semestre</span>
+  
+              </h2>
+</div>
+      </div>
+      
+      <div class="card-features-container">
+        <ul class="card-features">
+          <li>Cours</li>
+          <li >Résumés limités</li>
+          <li>QCM sans explication </li>
+          <li>Accés au serveur discord limités</li>
+
+        </ul>
+      </div>
+      <center><hr style="    margin-top: 50px;" width="60%"></center>
+
+      <div class="card-btn">
+        <a href="#création" class="btn btn-outline-danger btn-hollow">Register Now</a>
+      </div>
+    </div>
+
+    <div id="special" style="height: 600px;" class="card-cards">
+      <div class="card-header">
+        <div class="card-title">
+          <h1 style="font-weight:800">Premium</h1>
+          <h2> <span  style="color:rgba(0, 0, 0, 0.215);font-weight:800;font-family: 'Raleway',sans-serif;"> <del>149</del><sup  style="font-size:15px">dh</sup></span>
+          </h2>
+ 
+      
+         <center>        <div class="vertical-line"></div>
+         </center>
+           
+             <h2 style="color:red;font-family: 'Raleway',sans-serif;"><span >119</span><sup style="font-size:15px">dh</sup>
+               <br>
+               <span style="font-size: 15px;" class="pricing-el-small">/Semestre</span>
+   
+               </h2>
+ </div>        </div>
+      
+      <div class="card-features-container">
+        <ul class="card-features">
+          <li>Cours</li>
+          <li>Résumés exclusives</li>
+          <li>QCM avec explication </li>
+          <li>Accés au serveur discord premium</li>
+    
+          <li>Tutorat</li>
+
+        </ul>      </div>
+      <center><hr width="60%"></center>
+      <div class="card-btn">
+        <a href="#création  " class="btn btn-outline-danger btn-hollow">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top: 10pc;margin-bottom: 10pc;">
+  
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+
+    .swiper {
+      width: 100%;
+      height: 200px;
+      margin: 20px auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      background: #fffbfb;
+      display: flex;
+      border-radius: 20px;
+      place-content: center;
+      padding: 15px;
+      flex-wrap: wrap;
+      width: 25%;
+      height: 200px;
+      color: rgb(0, 0, 0);
+      transition: 1s ease-in-out;
+    }
+    .swiper-slide:hover{
+      background-color: rgb(0, 179, 255);
+      color: rgb(255, 255, 255);
+    }
+    @media screen and (max-width:505px){
+  .swiper-slide{
+   width: 50%;
+  }
+}
+    .swiper-slide > hr{
+      color: black;
+      position:relative;
+      display: block;
+    }
+  </style>
+  <h2  id="création"style="text-color:white !important;font-weight: 800;font-size: 56px;text-align: center;margin-bottom: 6pc;">
+    Quelles sont les étapes pour le paiement ?
+  </h2>  
+  
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h6>Étape 1:</h6>
+        <hr>
+    
+        <p>Création du compte sur la platforme  </p>
+        <a href="{% url 'register' %}"> <button class="btn btn-primary">Créer le compte</button> </a>
+    </div>
+      <div class="swiper-slide">
+        <h6>Étape 2:
+        </h6>
+        <hr/>
+        <p>
+Contactez-nous sur Whatsapp
+<a href="https://wa.me/+212774795459
+">+212 774795459</a> 
+        </p>
+      </div>
+
+      <div class="swiper-slide">
+        <h6>Étape 3:</h6>
+        <hr/>
+        <p>
+          Votre compte sera activé dans les 24h suivant dans le plutot possible
+        </p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!-- Swiper -->
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    swiper.slideTo(1);
+  </script>
+
+</section>

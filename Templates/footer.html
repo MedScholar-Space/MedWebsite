@@ -1,0 +1,76 @@
+<footer
+  style="margin-top: 20px"
+  class="footer mt-auto py-3 bg-dark"
+  data-bs-theme="dark"
+>
+<style>
+  @media screen and (max-width:505px) {
+    .row{
+    flex-direction: column;
+    row-gap:10px;
+    column-gap:20px;
+  }
+  .col{
+    margin-bottom: 20px;
+  }
+  }
+</style>
+  <div class="container">
+    <div class="row">
+      <div style="place-content: center; place-items: center" class="col col-lg-4">
+        <div class="row text-body-secondary">
+          &COPY;MedSchoolar Space 2024, Tout les droits sont résérvés
+        </div>
+ 
+      </div>
+      <div style="place-content: center" class="col col-lg-4">
+        <div class="row">
+          <span class="text-body-secondary">Email:</span>
+          <a class="link-light link-offset-2" href="mailto:medschoolarspace@gmail.com"
+            >MedSchoolarspace@gmail.com</a
+          >
+        </div>
+        <div class="row">
+          <span class="text-body-secondary">Numéro de téléphone:</span>
+          <a class="link-light link-offset-2" href="tel:+212774795459">+212 774795459</a>
+        </div>
+
+      </div>
+
+      <div style="place-content: center" class="col col-lg-4">
+        <h6 id="contact" style="color: white" class="display-6">
+         Contactez-nous :
+        </h6>
+        <br />
+        <form method="post">
+          {% csrf_token %}
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            name="email"
+            placeholder="name@example.com"
+          />
+          <label style="color: white" for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <textarea
+          name="message"
+            class="form-control"
+            rows="6"
+            cols="30"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+          ></textarea>
+          <label style="color: white" for="floatingTextarea2">Message</label>
+        </div>
+        <br>
+        <button style="width: 100%;" class="btn btn-outline-success" type="submit">
+        Envoyez
+        </button>
+      </form>
+      </div>
+  </div>
+</footer>

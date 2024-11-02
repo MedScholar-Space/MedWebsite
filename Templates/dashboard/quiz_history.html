@@ -1,0 +1,46 @@
+{% extends '../account/Navbar_dashboard.html' %}
+{% block content %}
+{% if request.user.profile.approved %}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Quiz</th>
+      <th scope="col">Score %</th>
+      <th scope="col">Date Taken:</th>
+      <th scope="col">View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for result in results %}
+
+      <th scope="row">   {{ result.quiz.name}}<br>
+</th>
+      <td>{{ result.resultat }}</td>
+      <td>{{ result.date_taken|date:'D j M Y , H:i' }}</td>
+      <td><a href="{% url 'history-view' result.id %}">
+        <button class="btn btn-primary">Views</button>
+      </a></td>
+    </tr>
+
+    {% empty %}
+    No Quiz Taken Yet
+{% endfor %}
+  </tbody>
+</table>
+<a href="{% url 'quiz_index' %}">Return to Home</a>
+
+{% else %}
+
+<div class="Not-approved">
+  <div class="text animate__animated animate__flash">
+    <h1>{{request.user.username}} </h1>
+    <p>The account isn't approved yet</p>
+    
+  </div>
+  </div>
+{% endif %}
+
+    {% endblock content %}

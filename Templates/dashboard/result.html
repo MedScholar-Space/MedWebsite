@@ -1,0 +1,95 @@
+{% extends '../account/Navbar_dashboard.html' %}
+{% block title %}
+Resultat 
+{% endblock title %}
+{% block content %}
+<div class="container">
+
+<h1>Résultat : {{resultat}} %</h1>
+<br>
+<br>
+{% for result in results %}
+    <h3>Question: {{ result.question }}</h3>
+    <ul>
+        <div class="row">
+            <div class="col-md-6">
+                <p > <strong>Réponses séléctionnés:</strong> 
+        {% for answer in result.selected_answers %}
+
+          {% if answer.is_correct %}
+<span style="color: rgb(80, 186, 80);">     <br>     ✅ {{ answer.text }}</span><br>
+          {% else  %}
+          <span style="color: red;">❌  {{ answer.text }}</span><br>
+          {% endif %}
+        {% empty %}
+            <li>No answer selected.</li>
+        {% endfor %}
+    </p>
+    </div>
+    <div class="col-md-6">
+    <p><strong>Réponses correctes:</strong>
+        <br>
+        {% for answer in result.correct_answers %}
+            <span style="color: rgb(80, 186, 80);">✅ {{ answer.text }}<br>
+                </span>
+            </p>
+        {% endfor %}
+    </div>  </div>
+    </ul>
+    <p style="font-size: 18px;"><b>Explication</b>: {{result.explication}}</p>
+<br>
+{% endfor %}
+<h3>Si vous recontrez un probléme n'hésitez pas à envoyez un message:</h3>
+<form method="post">
+    {% csrf_token %}
+  <div class="form-floating mb-3">
+    <input
+      type="email"
+      class="form-control"
+      id="floatingInput"
+      name="email"
+      placeholder="name@example.com"
+    />
+    <label style="color: black;" for="floatingInput">Email address</label>
+  </div>
+
+  <div class="form-floating">
+    <textarea
+    name="message"
+      class="form-control"
+      rows="6"
+      cols="30"
+      placeholder="Leave a comment here"
+      id="floatingTextarea2"
+      style="height: 100px"
+    ></textarea>
+    <label style="color: black;" for="floatingTextarea2">Message</label>
+  </div>
+  <br>
+  <div class="row" style="
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-items: center;
+  align-self: center;
+  justify-content: space-around;
+">
+  <div class="col">
+        <button class="btn btn-success" type="submit">
+Envoyer
+</button> &nbsp;
+
+
+  </div>
+  <div class="col" style="
+  align-items: end;
+  display: contents;
+">
+        <a class="btn btn-primary" href="/qcm/">Retourner</a>
+      </div>
+</div>
+</form>
+</div>
+{% endblock content %}

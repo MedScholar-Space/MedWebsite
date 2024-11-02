@@ -1,0 +1,74 @@
+{% extends '../account/Navbar_dashboard.html' %}*
+{% block title %}
+{{result.quiz.name}}
+{% endblock title %}
+{% block content %}
+<div class="container">
+
+
+<div class="row">
+    <div class="col">
+        <h1>
+            <strong>Quiz:</strong> {{ result.quiz.name}}<br>
+    
+        </h1>
+    
+    </div>
+    <div class="col" style="
+justify-items: flex-end;
+align-items: center;
+align-content: flex-start;
+justify-content: flex-end;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+">    <a href="{% url 'dashboard' %}">
+    <button class="btn btn-primary">Retournez au profile</button>
+
+</a>
+</div>
+</div>
+
+    <h6><strong>Score:</strong> {{ result.resultat }} %<br></h6>
+    <h6><strong>Vos réponses correctes :</strong> {{result.score}}/ {{result.quiz.questions.count}}</h6>
+    <h6>
+        <strong>Historique:</strong> {{ result.date_taken|date:"d/m/Y H:i" }}<br>
+
+    </h6>
+    <ul>
+        {% for question_result in result.question_results.all %}
+        <div class="row">
+
+
+            <div class="card">
+                <div style="padding:20px;" class="card-body">
+                    <div class="card-title">
+<strong>                        Question : {{ question_result.question.text }}
+</strong>
+                    </div>
+                    <div class="col col-md-6">
+                        <strong>Réponse sélectionnés:</strong>
+                        {% for answer in question_result.selected_answers.all %}
+                       <p>{{ answer.text }}</p>
+
+                        {% endfor %}
+                    </div>
+                    <div class="col col-md-6">
+                        <strong>Réponse Corrects:</strong>
+                        {% for answer in question_result.correct_answers.all %}
+                        <p>{{ answer.text }}</p>
+                        {% endfor %}
+                    </div>
+                    <p> Les Réponses sont : {% if question_result.is_correct %} Your answer is correct {% else %} Your
+                        answer is incorrect {% endif %}</p>
+                    <h5>Explication : </h5>
+                    <p>{{question_result.explication}}</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+
+</div>
+
+{% endblock content %}

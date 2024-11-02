@@ -1,0 +1,78 @@
+{% extends '../account/Navbar_dashboard.html' %}{% load static %}
+{% block title %}
+Quiz List
+{% endblock title %}
+{% block content %}
+{% if request.user.profile.approved %}
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+.card-body .card-title{
+  font-family: 'Oswald','Open Sans',sans-serif;
+
+}
+.card{
+  transition: 1s;
+  background-position-x:-100vw;
+  background-position-y:  -100vh;
+  background-origin: padding-box;
+}
+.card-body .card-text{
+  font-family: 'Open Sans',sans-serif;
+  font-size: 10px;  
+  color: white;
+  transition: 1s;
+  
+}
+.card-body  .btn-primary{
+  font-size: 10px;
+  border-radius: 1px 21px 2px 11px;
+  transition: 1s;
+  
+}
+.card-body  .btn-primary:hover{
+  font-size: 10px;
+  border-radius: 0px;
+}
+.card:hover{
+  background:rgb(106, 106, 223);
+  transform: scale(1.2);
+  z-index: 99;
+
+}
+.card:hover .card-title{
+color: white;
+}
+</style>
+<div class="container">
+<h1 >
+    Quiz List:
+
+</h1>
+
+<div class="row">
+  
+      {% for i  in object_list %}
+<div class="col col-lg-3">
+        <div class="col card">
+          <div  class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <a href="{% url 'quiz_view' i.id %}" class="btn btn-primary">Start Quiz</a>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}    
+      <br>  </div></div>
+        
+</div>
+
+{% else %}
+<h1>{{request.user.username}} </h1>
+<p>The account isn't approved yet</p>
+{% endif %}
+</div>
+{% endblock content %}

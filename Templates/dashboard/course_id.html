@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{course.titre}}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+ <style >
+    canvas{
+        width: 100%;
+    }
+ </style>
+</head>
+<body style="place-content: center;place-items: center;">
+
+    <script>
+        const pdfUrl = "{{course.file.url}}";
+
+// Load the PDF file
+pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+    const totalPages = pdf.numPages;
+    console.log(`Total Pages: ${totalPages}`);
+
+    for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+        pdf.getPage(pageNumber).then(page => {
+            const viewport = page.getViewport({ scale: 2 });
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport,
+            };
+
+            // Render the page into the canvas context
+            page.render(renderContext).promise.then(() => {
+                document.body.appendChild(canvas); // Append canvas to the document body
+                console.log(`Rendered page ${pageNumber}`);
+            }).catch(error => {
+                console.error(`Error rendering page ${pageNumber}: ${error}`);
+            });
+        }).catch(error => {
+            console.error(`Error getting page ${pageNumber}: ${error}`);
+        });
+    }
+}).catch(error => {
+    console.error(`Error loading PDF: ${error}`);
+});
+    </script>
+</body>
+</html>

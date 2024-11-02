@@ -1,0 +1,132 @@
+{% extends '../account/Navbar_dashboard.html' %}
+{% load static %}
+      
+{% block title %}
+Semestres
+{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+   .card__button{
+text-decoration: none !important;
+   }
+</style>
+{% endblock links %}
+
+{% block content %}     
+{% if request.user.profile.approved %}
+<div class="container">    <div class="card__container">
+{% for i in request.user.profile.semestre.all %}
+<article class="card__article {{i.background}}">
+   <div class="card__scale-1"></div>
+   <div class="card__scale-2"></div>
+
+   <div class="card__shape-1">
+      <div class="card__shape-2"></div>
+      <div class="card__shape-3">
+         <i class="{{i.icon|safe}} card__icon"></i>
+
+      </div>
+   </div>
+
+   <div class="card__data">
+      <h2 class="card__title">{{i.semestre}}</h2>
+      
+      <p class="card__description">
+
+      </p>
+
+
+      <a  href="{% url 'modules' %}?modules={{i}}" style="padding: 10px;width: 100px;" class="btn btn-outline-light">
+Entrer       </a>    
+ 
+
+   </div>
+</article>
+{% endfor %}
+   
+<!--
+                        <article class="card__article card__orange">
+               <div class="card__scale-1"></div>
+               <div class="card__scale-2"></div>
+
+               <div class="card__shape-1">
+                  <div class="card__shape-2"></div>
+                  <div class="card__shape-3">
+                     <i class="ri-fire-line card__icon"></i>
+                  </div>
+               </div>
+   
+               <div class="card__data">
+                  <h2 class="card__title">Awesome Card 02</h2>
+
+                  <p class="card__description">
+                     Gradient card, with bright edges 
+                     that gives it a cool look.
+                  </p>
+
+                  <a href="#" class="card__button">
+                     Continue learning
+                  </a>
+               </div>
+            </article>
+   
+            <article class="card__article card__green">
+               <div class="card__scale-1"></div>
+               <div class="card__scale-2"></div>
+
+               <div class="card__shape-1">
+                  <div class="card__shape-2"></div>
+                  <div class="card__shape-3">
+                     <i class="ri-shining-line card__icon"></i>
+                  </div>
+               </div>
+   
+               <div class="card__data">
+                  <h2 class="card__title">Awesome Card 03</h2>
+
+                  <p class="card__description">
+                     Gradient card, with bright edges 
+                     that gives it a cool look.
+                  </p>
+
+                  <a href="#" class="card__button">
+                     Continue learning
+                  </a>
+               </div>
+            </article>
+            -->
+         </div>
+      </div>
+      {% else %}
+<div class="Not-approved">
+   <div class="text animate__animated animate__flash">
+     <h1>{{request.user.username}} </h1>
+     <p>The account isn't approved yet</p>
+     
+   </div>
+   </div>
+   <script>
+     function checkWidth() {
+    var elements = document.querySelectorAll(".card__container");
+    if (window.innerWidth <=768) {
+        elements.forEach(function(element) {
+            element.classList.add("row"); // Add class when width is 768 or more
+        });
+    } else {
+        elements.forEach(function(element) {
+            element.classList.remove("row"); // Remove class otherwise
+        });
+    }
+}
+
+// Check width on load
+checkWidth();
+
+// Check width on resize
+window.addEventListener("resize", checkWidth);
+
+   </script>
+   {% endif %}
+      {% endblock content %}

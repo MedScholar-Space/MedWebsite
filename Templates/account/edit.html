@@ -1,0 +1,46 @@
+{% extends "account/Navbar_dashboard.html" %}
+{% block title %}Edit Account{% endblock title %}
+{% load static %}
+{% block Links %}
+<style>
+    #btn-primary{
+    color: #fff;
+    background-color: darkcyan;
+    border-color: #fff;;
+    }
+    #btn-primary:hover{
+        color:darkcyan !important;
+        background-color:#fff !important;
+        border-color: darkcyan !important;
+    }
+</style>
+{% endblock Links %}
+
+{% block content %}
+
+<div class="container">
+    <a href="{% url 'dashboard' %}"><button class="btn btn-primary"id="btn-primary">
+        Back to Dashboard
+    </button></a>
+    <h1>Edit your account</h1>
+ <p>You can edit your account using the following form:</p>
+ <form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col">
+ {{ user_form.as_p }}
+ {{ profile_form.as_p }}
+ {% csrf_token %}</div>
+ <p>
+<div class="col">     {% if user.profile.picture  %}
+    <img src="/static{{profile.profile.profilePic.url}}" width="50%"style="border-radius:50%;float:right;" alt=""><br>
+    {% else %}
+    {% endif %}  
+</div> </div>  <div>  <input class="btn btn-success" type="submit" value="Save changes"></p></div>
+ </form>
+</div>
+ <script>
+    let dis= document.querySelector(".navbar");
+    dis.style.display="none"
+
+ </script>
+ {% endblock content %}

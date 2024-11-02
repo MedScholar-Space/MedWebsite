@@ -1,0 +1,118 @@
+{% extends '../account/Navbar_dashboard.html' %}
+{% load static %}
+{% block title %}
+Modules{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/42e1fca473.js" crossorigin="anonymous"></script>
+<style>
+    .card__button{
+ text-decoration: none !important;
+    }
+ </style>
+{% endblock links %}
+
+{% block content %}     
+{% if request.user.profile.approved %}
+<div class="container">    <div class="card__container">
+{% for i in categories   %}
+<article class="card__article {{i.background}}">
+   <div class="card__scale-1"></div>
+   <div class="card__scale-2"></div>
+
+   <div class="card__shape-1">
+      <div class="card__shape-2"></div>
+      <div class="card__shape-3">
+         <i class="{{i.icon|safe}} card__icon"></i>
+      </div>
+   </div>
+
+   <div class="card__data">
+      <h2 class="card__title">{{i.module}}</h2>
+      
+      <p class="card__description">
+
+      </p>
+
+<div class="row">
+   <div class="col">
+      <a href="{% url 'quiz_index' %}?categorie={{i.module}}" style="padding: 15px;" class="btn btn-outline-primary">
+         Exam
+       </a>    
+   </div>
+   <div class="col">
+      <a href="{% url 'cours' %}?categorie={{i.module}}" style="padding: 15px;" class="btn btn-outline-danger  ">
+         Cours
+      </a>
+   </div>
+</div>
+   </div>
+</article>
+{% empty %}
+<h5>There is no modules</h5>
+{% endfor %}
+   
+<!--
+                        <article class="card__article card__orange">
+               <div class="card__scale-1"></div>
+               <div class="card__scale-2"></div>
+
+               <div class="card__shape-1">
+                  <div class="card__shape-2"></div>
+                  <div class="card__shape-3">
+                     <i class="ri-fire-line card__icon"></i>
+                  </div>
+               </div>
+   
+               <div class="card__data">
+                  <h2 class="card__title">Awesome Card 02</h2>
+
+                  <p class="card__description">
+                     Gradient card, with bright edges 
+                     that gives it a cool look.
+                  </p>
+
+                  <a href="#" class="card__button">
+                     Continue learning
+                  </a>
+               </div>
+            </article>
+   
+            <article class="card__article card__green">
+               <div class="card__scale-1"></div>
+               <div class="card__scale-2"></div>
+
+               <div class="card__shape-1">
+                  <div class="card__shape-2"></div>
+                  <div class="card__shape-3">
+                     <i class="ri-shining-line card__icon"></i>
+                  </div>
+               </div>
+   
+               <div class="card__data">
+                  <h2 class="card__title">Awesome Card 03</h2>
+
+                  <p class="card__description">
+                     Gradient card, with bright edges 
+                     that gives it a cool look.
+                  </p>
+
+                  <a href="#" class="card__button">
+                     Continue learning
+                  </a>
+               </div>
+            </article>
+            -->
+         </div>
+      </div>
+      {% else %}
+<div class="Not-approved">
+   <div class="text animate__animated animate__flash">
+     <h1>{{request.user.username}} </h1>
+     <p>The account isn't approved yet</p>
+     
+   </div>
+   </div>
+   {% endif %}
+      {% endblock content %}

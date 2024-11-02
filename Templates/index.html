@@ -1,0 +1,94 @@
+{% extends 'Navbar.html' %} {% load static %} {% block title %} Home
+{% endblock title %}
+
+{% block style %}
+<style>
+  body {
+    background-image:url("{% static 'files/Background-main.jpg' %}");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    background-size:cover;
+    color: white
+  }
+
+  @media screen and (max-width:600px) {
+    body {
+      background-image: none;
+    }
+  }
+
+  .is-centered {
+    color: white;
+    font-weight: 900;
+  }
+
+  #second-row {
+    background-image: url("{% static 'files/Background.jpg' %}");
+  }
+</style>
+{% endblock style %}
+{% block content %}
+<style>
+  @media screen and (max-width:505px) {
+    .row {
+      flex-direction: column;
+    }
+
+    .col {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+<div style="margin-bottom:11pc ;margin-top: 5pc;" class="container">
+
+  <div class="row">
+    <div class="col col-md-6">
+      <h1 data-theme="dark" class="display-6 is-centered">MedScholar Space</h1>
+
+      <p style='color: white;'>
+        Accédez à une vaste banque de questions organisée par examen, accompagnée d'explications claires pour chaque réponse. Rejoignez notre communauté sur Discord pour du tutorat personnalisé et des échanges entre étudiants. Entraînez-vous à tout moment, où que vous soyez, grâce à notre plateforme mobile. Prêt à exceller ?
+
+
+      <div class="row">
+        <div class="col">
+
+
+          <h4 style="font-weight: 600;font-size: 45px;color:aquamarine;">+ 60 000 </h4>
+          <span style="font-weight:600;font-size: 20px;"> &nbsp; &nbsp; Questions</span>
+        </div>
+
+        <div class="col">
+          <h4 style="font-weight: 600;font-size: 45px;color: aquamarine;"> +1200</h4>
+          <span style="font-weight:800;font-size: 20px;"> &nbsp; &nbsp; Examens</span>
+        </div>
+
+
+      </div>
+      </p>
+      <div class="row">
+        <div class="col col-md-6">    <a href="{% url 'register' %}">
+          <button style="width:80%;padding-top: 10px;padding-bottom: 10px;" class="btn btn-info">S'inscrire</button>
+        </a> </div>
+        <div class="col col-md-6">
+      <a href="{% url 'login' %}">
+        <button style="width:80%;padding-top: 10px;padding-bottom: 10px;" class="btn btn-outline-info">Se
+          connecter</button>
+      </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-6">
+      <img src="{% static 'files/Med-svg.svg' %}" alt="">
+    </div>
+  </div>
+
+
+</div>
+
+
+{% include './Cards.html' %}
+{% endblock content %}

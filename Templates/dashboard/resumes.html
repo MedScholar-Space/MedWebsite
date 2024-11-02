@@ -1,0 +1,64 @@
+{% extends '../account/Navbar_dashboard.html' %}
+{% load static %}
+{% block title %}
+Courses
+{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+<div class="row">{% if categories %}
+  <div class="col-lg-3">
+  
+    <ul class="list-group ">
+    <li style="font-size: 20px;"     class="list-group-item display-6" >Categories :</li>
+                {% for c in categories %}
+                <div class="accordion accordion-flush" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{c.id}}" aria-expanded="false" aria-controls="collapse-{{c.id}}">
+                     {{c.category}}
+                      </button>
+                    </h2>
+                    <div id="collapse-{{c.id}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <a href="?categorie={{c.category}}">  {{c.category}}</a>                              {% for sub in c.subcategory_set.all %}
+                        <a class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="?sub_category={{sub.sub_category}}"><li style="border: none;list-style-type: disc !important;;" class="list-group-item">{{sub.sub_category}}   </li></a> 
+                        {% endfor %}                            </div>
+                    </div>
+                  </div>
+                  
+                </div>
+  
+  
+    
+    {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+            {% for r in resumes %}
+
+    <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">{{r.titre}}</h5>
+    <p class="card-text">{{r.categorie}}</p>
+    <a href="{{r.file.url}}" class="btn btn-primary" download>
+      Download</a>  
+        <a href="{{r.file.url}}" target="_blank" class="btn btn-primary">
+        Read</a>
+
+  </div>
+</div>
+<br>
+    </div>{% endfor %}
+
+
+       </div>
+
+</div>
+
+<script>
+    let navbarItem = document.getElementById('resumé')
+    navbarItem.classList.add('active')
+</script>
+{% endblock content %}

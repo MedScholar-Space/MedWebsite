@@ -1,0 +1,97 @@
+{% extends "Navbar.html" %}
+{% load static %}
+{% block title %} Registration Page{% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock links %}
+{% block content %}
+ <style>
+  #contact-info{
+  font-family: Helvetica;
+  
+  }
+  .navbar{
+    background-color: black;
+    margin-top: 0pc !important;
+  }
+  @media screen and (max-width:766px) {
+    .row{
+        flex-direction: column !important;
+    }
+  }
+ </style>
+ <div class="container">
+<div class="row">
+    
+    <div class="col col-md-6">
+<form style="width: 100%;"  method="POST">
+<h1>Créer votre compte</h1>
+<p>Veuillez utiliser le formulaire suivant pour créer compte:</p>
+{{ user_form.as_p }}
+
+
+<div>
+
+<label for="Date">
+    Date de naissance:
+</label>
+<input class="form-control" type="date" name="{{profile_form.date_of_birth.name}}" id="#date_of_birth">
+</div>
+    
+
+{% csrf_token %}
+<br>
+<p><input style="width: 100%;" class="btn btn-primary" type="submit" value="Créer compte"></p>
+
+</form>
+</div>  
+<div class="col col-md-6">
+    <img style="width: 100%;height: 100%;" src="{% static 'files/signup.svg' %}" alt="Vector Image">
+</div>
+</div>
+<script>
+      const textInputs = document.querySelectorAll('input[type="text"]');
+    textInputs.forEach((input)=>{
+        input.classList.add('input')
+    })
+
+    const emailInputs = document.querySelectorAll('input[type="email"]');
+    emailInputs.forEach((input)=>{
+        input.classList.add('input')
+    })
+    const passInputs = document.querySelectorAll('input[type="password"]');
+    passInputs.forEach((input)=>{
+        input.classList.add('input')
+    })
+    const labels = document.querySelectorAll('label');
+    labels.forEach((label)=>{
+        label.classList.add('label')
+    })
+</script>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+   element = document.getElementById("id_username")
+   element.classList.add("form-control")   
+   element1 = document.getElementById("id_password")
+   element1.classList.add("form-control")   
+   element2 = document.getElementById("id_password2")
+   element2.classList.add("form-control")   
+   element3 = document.getElementById("id_first_name")
+   element3.classList.add("form-control")   
+   element5 = document.getElementById("id_last_name")
+   element5.classList.add("form-control")
+   element4 = document.getElementById("id_email")
+   element4.classList.add("form-control")
+   contact_info= document.getElementsById("contact-info");
+   contact_info.classList.add("contact")
+</script>
+{% endblock content %}
