@@ -1,0 +1,395 @@
+{% extends '../../account/Dashboard Test.html' %}{% load static%}
+{% block content %}
+
+<div style="margin-top: 20px;" class="container-fluid">
+  
+<div class="main-body">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            {% if request.user.profile.profilePic %}
+            <img
+              src="{{request.user.profile.profilePic.url}}"
+              alt="Admin"
+              class="rounded-circle p-1 bg-primary"
+              width="110"
+            />
+
+            {% else %}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="120"
+              height="120"
+              fill="rgba(0,0,0,0.59)"
+            >
+              <path
+                d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM6.02332 15.4163C7.49083 17.6069 9.69511 19 12.1597 19C14.6243 19 16.8286 17.6069 18.2961 15.4163C16.6885 13.9172 14.5312 13 12.1597 13C9.78821 13 7.63095 13.9172 6.02332 15.4163ZM12 11C13.6569 11 15 9.65685 15 8C15 6.34315 13.6569 5 12 5C10.3431 5 9 6.34315 9 8C9 9.65685 10.3431 11 12 11Z"
+              ></path>
+            </svg>
+
+            {% endif %}
+            <div class="mt-3">
+              <h4>{{request.user.first_name}} {{request.user.last_name}}</h4>
+              <p class="text-secondary mb-1">
+                Nom d'utulisateur: {{request.user.username}}
+              </p>
+              {% csrf_token %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="card">
+        <form method="post" class="card-body" enctype="multipart/form-data">
+          {% csrf_token %} 
+          {% for i in user_form %}
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">{{i.label}}</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                class="form-control"
+                value="{{i.value}}"
+                name="{{i.name}}"
+              />
+            </div>
+          </div>
+          {% endfor %}
+           {% for i in profile_form %}
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Date de naissance</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                class="form-control"
+                type="date"
+                value="{{i.value}}"
+                name="{{i.name}}"
+                id="#date_of_birth"
+                required
+              />
+            </div>
+          </div>
+          {% endfor %} 
+          {% for i in picture_form %}
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Photo de profile</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                class="form-control"
+                type="file"
+                name="{{i.name}}"
+                id="formFile"
+              />
+            </div>
+          </div>
+          {% endfor %}
+
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="submit"
+                class="btn btn-primary px-4"
+                value="Save Changes"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+   
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Dashboard</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Feeds</li>
+            </ol>
+      <!-- zzzz                       <div class="col-md-12 col-md-6 col-lg-4">
+              
+                              <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-md-6 col-lg-4">
+                            <div class="card" >
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                              </div>
+                            </div>
+                          </div>-->
+                        </div>
+
+
+
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    QCM Progress
+                  </div>
+                  <div class="card-body">
+                    <canvas id="myAreaChart" width="100%" height="45"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    10 Dernier Réponses correctes
+                  </div>
+                  <div class="card-body">
+                    <canvas id="myBarChart" width="100%" style="height: 100%;"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                QCM Resultats
+              </div>
+              <div class="card-body">
+                <table id="datatablesSimple">
+                  <thead>
+                    <tr>
+                      <th>
+                        id
+                      </th>
+                      <th>QCM</th>
+            
+                      <th>Date</th>
+                      <th>Resultat</th>
+
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    
+                      <tr>
+                      <th>id</th>
+                        <th>QCM</th>
+              
+                        <th>Date</th>
+                        <th>Resultat</th>
+  
+                        <th>Score</th>
+                      </tr>
+                  </tfoot>
+                  <tbody>
+                   
+                  {% for result in results %}
+                  <tr>
+                    <td>{{result.id}}</td>
+                   <td> <a href="{%  url 'history-view' result.id %}"> {{result.quiz}}</a></td>
+                    <td>{{result.date_taken }}</td>
+                    <td>{{result.resultat}}</td>
+                    <td>{{result.score}} réponses correctes </td>
+               
+                  </tr></a>
+                 {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+
+<script src="{% static 'Javascript/Chart.min.js' %}"></script>
+<script>
+// Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+  // *     example: number_format(1234.56, 2, ',', ' ');
+  // *     return: '1 234,56'
+  number = (number + '').replace(',', '').replace(' ', '');
+  var n = !isFinite(+number) ? 0 : +number,
+    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    s = '',
+    toFixedFix = function(n, prec) {
+      var k = Math.pow(10, prec);
+      return '' + Math.round(n * k) / k;
+    };
+  // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+  if (s[0].length > 3) {
+    s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+  }
+  if ((s[1] || '').length < prec) {
+    s[1] = s[1] || '';
+    s[1] += new Array(prec - s[1].length + 1).join('0');
+  }
+  return s.join(dec);
+}
+
+// Bar Chart Example
+var ctx = document.getElementById("myBarChart");
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [{% for i in results|slice:"0:6" %}"{{i.quiz}}",{% endfor %}],
+    datasets: [{
+      label: "Score",
+      backgroundColor: "#4e73df",
+      hoverBackgroundColor: "#2e59d9",
+      borderColor: "#4e73df",
+      data: [{% for i in results|slice:"0:6" %}{{i.score}},{% endfor %}],
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 10,
+        right: 25,
+        top: 25,
+        bottom: 0
+      }
+    },
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
+        },
+        gridLines: {
+          display: false,
+          drawBorder: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        },
+        maxBarThickness: 25,
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 4,
+          maxTicksLimit: 5,
+          padding: 10,
+          // Include a dollar sign in the ticks
+          callback: function(value, index, values) {
+            return 'Score: ' + number_format(value);
+          }
+        },
+        gridLines: {
+          color: "rgb(234, 236, 244)",
+          zeroLineColor: "rgb(234, 236, 244)",
+          drawBorder: false,
+          borderDash: [2],
+          zeroLineBorderDash: [2]
+        }
+      }],
+    },
+    legend: {
+      display: false
+    },
+    tooltips: {
+      titleMarginBottom: 10,
+      titleFontColor: '#6e707e',
+      titleFontSize: 14,
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+      callbacks: {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+        }
+      }
+    },
+  }
+});
+
+</script>
+
+
+<script>
+
+// Area Chart Example
+var ctx = document.getElementById("myAreaChart");
+var myLineChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [{% for i in results|slice:"0:6" %}"{{i.quiz}}",{% endfor %}],
+    datasets: [{
+      label: "Sessions",
+      lineTension: 0.3,
+      backgroundColor: "rgba(2,117,216,0.2)",
+      borderColor: "rgba(2,117,216,1)",
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHitRadius: 50,
+      pointBorderWidth: 2,
+      data: [{% for i in results|slice:"0:6" %}{{i.resultat}},{% endfor %}],
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'date'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 7
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 100,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          color: "rgba(0, 0, 0, .125)",
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+</script>
+{% endblock content %}

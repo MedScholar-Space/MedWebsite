@@ -1,10 +1,10 @@
-{% extends '../account/Navbar_dashboard.html' %}
+{% extends '../account/Dashboard Test.html' %}
 {% load static %}
 {% block title %}
 Modules{% endblock title %}
 {% block links %}
 <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/42e1fca473.js" crossorigin="anonymous"></script>
 <style>
     .card__button{
@@ -15,16 +15,19 @@ Modules{% endblock title %}
 
 {% block content %}     
 {% if request.user.profile.approved %}
-<div class="container">    <div class="card__container">
+<script>
+   document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+ </script>
+<div class="container" style="width: 100%;">    <div class="card__container">
 {% for i in categories   %}
-<article class="card__article {{i.background}}">
+<article class="card__article ">
    <div class="card__scale-1"></div>
    <div class="card__scale-2"></div>
 
    <div class="card__shape-1">
       <div class="card__shape-2"></div>
       <div class="card__shape-3">
-         <i class="{{i.icon|safe}} card__icon"></i>
+         {% if i.Gif_icon %} <img  style="width: 100%;" src="{{i.Gif_icon.url}}"/> {% else %} <i class="card__icon {{i.icon}}"> </i>{% endif %}
       </div>
    </div>
 
@@ -49,9 +52,11 @@ Modules{% endblock title %}
 </div>
    </div>
 </article>
+
 {% empty %}
 <h5>There is no modules</h5>
 {% endfor %}
+   
    
 <!--
                         <article class="card__article card__orange">
@@ -106,6 +111,7 @@ Modules{% endblock title %}
             -->
          </div>
       </div>
+      
       {% else %}
 <div class="Not-approved">
    <div class="text animate__animated animate__flash">

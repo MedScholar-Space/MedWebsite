@@ -12,8 +12,8 @@ def cours(request):
     elif sub_categories is not None:
         cours = cour.objects.filter(sub_categorie__sous_module=sub_categories,semestre__in=user_semesters )
     categories = Category.objects.filter(semestre__in=user_semesters)
-
-    context = {'cours':cours,'d':categories}
+    
+    context = {'cours':cours,'d':categories,}
     return render(request,'dashboard/courses.html',context)
 def course(request,pk):
     course = cour.objects.get(id=pk)

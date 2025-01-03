@@ -18,6 +18,7 @@ auth_views.PasswordChangeDoneView.as_view(),
 name='password_change_done'),
 path('register/', views.register, name='register'),
 path('account/edit/', views.edit, name='edit'),
-path('', views.dashboard, name='dashboard'),
+path('', views.dashboard, name='dashboard_Test'),
+path('test', views.dashboard_Test, name='dashboard'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

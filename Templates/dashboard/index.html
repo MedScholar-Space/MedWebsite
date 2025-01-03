@@ -1,4 +1,4 @@
-{% extends '../account/Navbar_dashboard.html' %}
+{% extends '../account/Dashboard Test.html' %}
 {% load static %}
       
 {% block title %}
@@ -18,7 +18,7 @@ text-decoration: none !important;
 {% if request.user.profile.approved %}
 <div class="container">    <div class="card__container">
 {% for i in request.user.profile.semestre.all %}
-<article class="card__article {{i.background}}">
+<article class="card__article ">
    <div class="card__scale-1"></div>
    <div class="card__scale-2"></div>
 
@@ -38,7 +38,7 @@ text-decoration: none !important;
       </p>
 
 
-      <a  href="{% url 'modules' %}?modules={{i}}" style="padding: 10px;width: 100px;" class="btn btn-outline-light">
+      <a  href="{% url 'modules' %}?modules={{i}}" style="padding: 10px;width: 100px;color:black;border-color: black;" class="btn btn-outline-light">
 Entrer       </a>    
  
 
@@ -128,5 +128,6 @@ checkWidth();
 window.addEventListener("resize", checkWidth);
 
    </script>
+   
    {% endif %}
       {% endblock content %}

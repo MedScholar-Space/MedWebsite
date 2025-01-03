@@ -13,10 +13,7 @@ class ResumeAdmin(ModelAdmin):
 class SupportAdmin(ModelAdmin):
     list_display = ['titre']
 
-class SubCategory(admin.TabularInline):
-    model = SubCategory
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    inlines = [SubCategory,]
     list_display = ['module']
 admin.site.register(Contact)

@@ -1,4 +1,4 @@
-{% extends '../account/Navbar_dashboard.html' %}{% load static %}
+{% extends '../account/Dashboard Test.html' %}{% load static %}
 {% block title %}
 Quiz List
 {% endblock title %}
@@ -29,8 +29,7 @@ Quiz List
 .card-body  .btn-primary{
   font-size: 10px;
   border-radius: 1px 21px 2px 11px;
-  transition: 1s;
-  
+  transition: 1s linear;
 }
 .card-body  .btn-primary:hover{
   font-size: 10px;
@@ -38,17 +37,18 @@ Quiz List
 }
 .card:hover{
   background:rgb(106, 106, 223);
-  transform: scale(1.2);
-  z-index: 99;
+  transform: scale(1.1) ;
+  z-index: 10000;
 
 }
 .card:hover .card-title{
 color: white;
 }
 </style>
-<div style="margin-top: 10px;" class="container">
+<div style="margin: 10px;" class="container">
 
 
+<div class="container">
 <div class="row">
   
       {% for i  in cours %}
@@ -66,7 +66,10 @@ color: white;
       <br>  </div></div>
         
 </div>
-
+</div>
+<script>
+  document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+</script>
 {% else %}
 <div class="Not-approved">
   <div class="text animate__animated animate__flash">

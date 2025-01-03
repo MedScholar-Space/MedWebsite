@@ -1,3 +1,6 @@
+
+
+
 """
 Django settings for MedProject project.
 
@@ -15,7 +18,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-domain = os.getenv("DOMAIN_NAME")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -23,9 +26,8 @@ domain = os.getenv("DOMAIN_NAME")
 SECRET_KEY = 'django-insecure-6kdlne!=zyhjg28frtpiy!zwv@*il8%9ww!z$ljcz2+^a9vl&!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['127.0.0.1',domain]
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1','*','88.223.95.99',"https://medscholarspace.com","https://www.medscholarspace.com"]
 LOGIN_REDIRECT_URL = 'semestres'
 LOGIN_URL = "accounts/login"
 LOGOUT_REDIRECT_URL = 'home'
@@ -55,6 +57,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,16 +89,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'MedProject.wsgi.application'
 
 
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'postgres',
+#        'USER': 'postgres',
+#        'PASSWORD': '@MedScholar@Space0',
+#        'HOST': '46.202.129.121',
+#        'PORT': '5432',
+#    }
+    
+
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databas
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+ 'default': {
+   'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '@MedScholar@Space0',
+        'HOST': '46.202.129.121',
+        'PORT': '5432',
     }
-}
-
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -129,17 +145,24 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
-STATIC_URL = STATIC_HOST + '/static/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.medscholarspace.com',
+    'https://medscholarspace.com',
+]
+STATIC_URL = 'staticfiles/' 
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/files/')
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/files/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles/')
 
+MEDIA_URL = '/files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# settings.p

@@ -1,4 +1,5 @@
 from django.contrib import admin
+import nested_admin
 
 # Register your models here.
 from .models import *
@@ -6,13 +7,21 @@ from .models import *
 
 
 
-class AnswerInline(admin.TabularInline):
+class AnswerInline(nested_admin.NestedTabularInline):
     model = Answer
 
 
-@admin.register(Question)
-class QuestionAdmin(admin.ModelAdmin):
-    inlines = [AnswerInline]
 
-admin.site.register(Quiz)
+class QuestionAdmin(nested_admin.NestedStackedInline):
+    inlines = [AnswerInline]
+    model = Question
+@admin.register(Quiz)
+class QuizAdmin(nested_admin.NestedModelAdmin):
+    inlines= [QuestionAdmin]
+
+    
+#admin.site.register(Quiz)
 admin.site.register(Answer)
+
+
+

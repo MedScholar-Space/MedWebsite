@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 import json
-from django.http import JsonResponse as j
+from django.http import JsonResponse 
 # Create your views here.
 from .models import *
 from django.views.generic import ListView
@@ -43,6 +43,84 @@ def home(request):
     template_name='dashboard/home.html' 
     return render(request,template_name,context)
 
+
+@login_required
+def quiz_view(request, pk):
+    quiz = get_object_or_404(Quiz, id=pk)
+    questions = quiz.questions.all()
+    user = request.user
+    comments = quiz.comments.filter(active=True)
+    new_comment = None
+    if request.method == 'POST':
+# A comment was posted
+        form = CommentForm(data=request.POST)
+        if form.is_valid():
+# Create Comment object but don't save to database yet
+            new_comment = form.save(commit=False)
+# Assign the current post to the comment
+            new_comment.Quiz = quiz
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        form = CommentForm()
+    if request.method == 'POST':
+        if True==True:
+            # Get results sent from the frontend
+            results_data = json.loads(request.POST.get('results', '[]'))
+            score = 0
+            total_questions = len(results_data)
+            
+            # Create a result object to store user performance
+            result = Result.objects.create(quiz=quiz, user=user, score=0, resultat=0)
+            
+            for result_item in results_data:
+                # Find the question by its text
+                question = questions.filter(text=result_item['question']).first()
+                
+                if question:
+                    # Check if the selected answers are correct
+                    selected_answer_ids = set(result_item['selected_answers'])
+                    correct_answer_ids = set(result_item['correct_answers'])
+                    
+                    # Retrieve the Answer objects based on ids
+                    selected_answers = question.answers.filter(text=selected_answer_ids)
+                    print((selected_answer_ids,selected_answers))
+                    correct_answers = question.answers.filter(text=correct_answer_ids)
+                    
+                    # Compare the selected answers with the correct ones
+                    is_correct = set(selected_answers) == set(correct_answers)
+                    
+                    # Create a QuestionResult instance to store question-wise result
+                    question_result = QuestionResult.objects.create(
+                        result=result,
+                        question=question,
+                        is_correct=is_correct,
+                        explication=result_item['explication'],
+                    )
+                    
+                    # Store the selected answers and correct answers
+                    question_result.selected_answers.set(selected_answers)
+                    question_result.correct_answers.set(correct_answers)
+                    
+                    # If the answer is correct, increment the score
+                    if is_correct:
+                        score += 1
+            
+            # Calculate percentage
+            resultat = (score * 100) / total_questions if total_questions > 0 else 0
+            result.score = score
+            result.resultat = resultat
+            result.save()
+            
+            # Send the result as a response to the frontend
+            return redirect('dashboard')
+
+    # If it's a GET request, just render the quiz form
+    return render(request, 'dashboard/home_detail.html', {'quiz': quiz, 'questions': questions,'comments': comments,'new_comment': new_comment,'form': form})
+
+
+
+'''
 @login_required
 def quiz_view(request, pk):
     quiz = get_object_or_404(Quiz, id=pk)
@@ -119,7 +197,7 @@ def quiz_view(request, pk):
         form = QuizForm(questions=questions)
     categories  = Category.objects.filter(semestre__in= user_semesters)
 
-    return render(request, 'dashboard/home_detail.html', {'d':categories,'quiz': quiz, 'form': form})
+    return render(request, 'dashboard/home_detail.html', {'d':categories,'quiz': quiz, 'form': form})'''
 @login_required
 def quiz_history_view(request):
     quiz_results = Result.objects.filter(user=request.user)

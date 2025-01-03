@@ -3,10 +3,13 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import random
+
 from .forms import *
 from django.core.paginator import Paginator ,EmptyPage,PageNotAnInteger
 from Quiz.models import *
 from Results.models import *
+from MedApp.models import *
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -69,6 +72,44 @@ def dashboard(request):
     categories = Category.objects.filter(semestre__in=user_semesters  )
     context = {'profile':profile,'results':results,'d':categories,'user_form': user_form,'profile_form': profile_form,'picture_form':picture_form}
     return render(request,'account/dashboard.html',context)
+
+@login_required
+def dashboard_Test(request):
+    profile = request.user
+    results = Result.objects.filter(user=profile)
+    
+    user_semesters = request.user.profile.semestre.all()
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user,data=request.POST)
+        profile_form = ProfileEditForm(instance=request.user.profile,data=request.POST,files=request.FILES)
+        picture_form = ImageEditForm(instance=request.user.profile,data=request.POST,files=request.FILES)
+
+        if user_form.is_valid():
+            user_form.save()
+        if profile_form.is_valid():
+            profile_form.save()
+    
+        if picture_form.is_valid():
+            picture_form.save()
+
+            messages.success(request, 'Profile updated '\
+            'successfully')
+            return redirect("dashboard")
+
+        else:
+            messages.error(request, 'Error updating your profile')
+            print('Something is wrong')
+    else:
+            user_form = UserEditForm(instance=request.user)
+            profile_form = ProfileEditForm(instance=request.user.profile)
+            picture_form = ImageEditForm(instance=request.user.profile)
+        
+
+    courses  = cour.objects.all()
+    quizs  = Result.objects.filter(user=request.user)
+    categories = Category.objects.filter(semestre__in=user_semesters  ) 
+    context = {'profile':profile,'results':results,'quizs':quizs,'d':categories,'user_form': user_form,'profile_form': profile_form,'courses':courses,'picture_form':picture_form}
+    return render(request,'Admin/Admin/index.html',context)
 
 def register(request):
     semestres = Semestre.objects.all()

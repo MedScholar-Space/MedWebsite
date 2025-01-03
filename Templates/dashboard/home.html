@@ -1,4 +1,4 @@
-{% extends '../account/Navbar_dashboard.html' %}{% load static %}
+{% extends '../account/Dashboard Test.html' %}{% load static %}
 {% block title %}
 Quiz List
 {% endblock title %}
@@ -11,13 +11,14 @@ Quiz List
 
 .card-body .card-title{
   font-family: 'Oswald','Open Sans',sans-serif;
-
+  
 }
 .card{
   transition: 1s;
   background-position-x:-100vw;
   background-position-y:  -100vh;
   background-origin: padding-box;
+  box-shadow: 0px 3px 10px 1px gray;
 }
 .card-body .card-text{
   font-family: 'Open Sans',sans-serif;
@@ -38,8 +39,8 @@ Quiz List
 }
 .card:hover{
   background:rgb(106, 106, 223);
-  transform: scale(1.2);
   z-index: 99;
+  box-shadow:0px 0px 10px 5px gray;
 
 }
 .card:hover .card-title{
@@ -69,7 +70,9 @@ color: white;
       <br>  </div></div>
         
 </div>
-
+<script>
+  document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+</script>
 {% else %}
 <h1>{{request.user.username}} </h1>
 <p>The account isn't approved yet</p>

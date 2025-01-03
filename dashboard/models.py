@@ -12,7 +12,7 @@ class Semestre(models.Model):
     semestre = models.CharField(max_length=200,help_text="Niveau ou Semestre où les étudiants étudie.")
     background=models.TextField(choices=Background_Choices,max_length=200,null=True,blank=True)
     icon = models.CharField(max_length=200,default='ri-flashlight-line')
-
+    Gif_icon = models.FileField(upload_to="gif_icons",default=None,blank=True,null=True)
     def __str__(self):
         return self.semestre
 class Profile(models.Model):
