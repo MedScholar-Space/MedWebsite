@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
+    'nested_admin',
+
     'MedApp',
     'Quiz',
     'Results',

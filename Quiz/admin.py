@@ -23,5 +23,5 @@ class QuizAdmin(nested_admin.NestedModelAdmin):
 #admin.site.register(Quiz)
 admin.site.register(Answer)
 
-
+admin.site.register(Comment)
 

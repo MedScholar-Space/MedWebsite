@@ -49,7 +49,7 @@ def quiz_view(request, pk):
     quiz = get_object_or_404(Quiz, id=pk)
     questions = quiz.questions.all()
     user = request.user
-    comments = quiz.comments.filter(active=True)
+    comments = quiz.comment_set.filter(active=True)
     new_comment = None
     if request.method == 'POST':
 # A comment was posted

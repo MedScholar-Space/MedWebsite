@@ -271,9 +271,11 @@
           <div class="slider">
     <div id="second">
       <div data-aos="fade-right" id="comments" class="col-lg-6">
-        {% with comments.count as total_comments %}
+     {% if comments  %}   {% with comments.count as total_comments %}
         <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
-        {% endwith %} {% for comment in comments %}
+        {% endwith %}
+	{% endif %}
+ {% for comment in comments %}
         <div class="comment">
           <p class="info">
             Comment {{ forloop.counter }} by: {{ comment.name }}

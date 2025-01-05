@@ -30,7 +30,7 @@ class Answer(models.Model):
         return self.text
     
 class Comment(models.Model):
-    Quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE,related_name='comments')
+    Quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
     Your_Name = models.CharField(max_length=80,)
     Your_Email = models.EmailField()
     Your_Comment = models.TextField()
