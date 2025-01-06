@@ -113,7 +113,7 @@ def quiz_view(request, pk):
             result.save()
             
             # Send the result as a response to the frontend
-            return redirect('dashboard')
+
 
     # If it's a GET request, just render the quiz form
     return render(request, 'dashboard/home_detail.html', {'quiz': quiz, 'questions': questions,'comments': comments,'new_comment': new_comment,'form': form})

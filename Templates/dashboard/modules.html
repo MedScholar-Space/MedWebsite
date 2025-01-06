@@ -16,7 +16,9 @@ Modules{% endblock title %}
 {% block content %}     
 {% if request.user.profile.approved %}
 <script>
-   document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+   if(window.innerWidth > 991){
+      document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+   }
  </script>
 <div class="container" style="width: 100%;">    <div class="card__container">
 {% for i in categories   %}

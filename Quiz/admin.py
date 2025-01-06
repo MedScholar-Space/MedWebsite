@@ -49,5 +49,5 @@ class QuestionAdmin(nested_admin.NestedStackedInline):
 class QuizAdmin(nested_admin.NestedModelAdmin):
     inlines= [QuestionAdmin]
 
-    
+admin.site.register(Comment)    
 admin.site.register(Answer)

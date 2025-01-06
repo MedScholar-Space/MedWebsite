@@ -16,6 +16,14 @@ text-decoration: none !important;
 
 {% block content %}     
 {% if request.user.profile.approved %}
+
+  <script>
+   if(window.innerWidth > 991){
+      document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+   }   
+
+
+</script>
 <div class="container">    <div class="card__container">
 {% for i in request.user.profile.semestre.all %}
 <article class="card__article ">
@@ -25,7 +33,7 @@ text-decoration: none !important;
    <div class="card__shape-1">
       <div class="card__shape-2"></div>
       <div class="card__shape-3">
-         <i class="{{i.icon|safe}} card__icon"></i>
+         {% if i.Gif_icon %} <img  style="width: 100%;" src="{{i.Gif_icon.url}}"/> {% else %} <i class="card__icon {{i.icon}}"> </i>{% endif %}
 
       </div>
    </div>

@@ -5448,3 +5448,974 @@ Not Found: /wp-admin/setup-config.php
 Not Found: /wp-admin/setup-config.php
 Not Found: /wordpress/wp-admin/setup-config.php
 Not Found: /wordpress/wp-admin/setup-config.php
+[2025-01-05 22:35:50 +0000] [1142] [INFO] Starting gunicorn 23.0.0
+[2025-01-05 22:35:50 +0000] [1142] [INFO] Listening at: http://0.0.0.0:8000 (1142)
+[2025-01-05 22:35:50 +0000] [1142] [INFO] Using worker: sync
+[2025-01-05 22:35:50 +0000] [1143] [INFO] Booting worker with pid: 1143
+Not Found: /favicon.ico
+[2025-01-05 22:37:40 +0000] [1142] [INFO] Handling signal: hup
+[2025-01-05 22:37:40 +0000] [1142] [INFO] Hang up: Master
+[2025-01-05 22:37:40 +0000] [1142] [ERROR] Worker (pid:1143) was sent SIGHUP!
+[2025-01-05 22:37:40 +0000] [1160] [INFO] Booting worker with pid: 1160
+[2025-01-05 22:45:13 +0000] [1080] [INFO] Starting gunicorn 23.0.0
+[2025-01-05 22:45:13 +0000] [1080] [INFO] Listening at: http://0.0.0.0:8000 (1080)
+[2025-01-05 22:45:13 +0000] [1080] [INFO] Using worker: sync
+[2025-01-05 22:45:13 +0000] [1081] [INFO] Booting worker with pid: 1081
+[2025-01-05 22:45:31 +0000] [1080] [INFO] Handling signal: hup
+[2025-01-05 22:45:31 +0000] [1080] [INFO] Hang up: Master
+[2025-01-05 22:45:31 +0000] [1080] [ERROR] Worker (pid:1081) was sent SIGHUP!
+[2025-01-05 22:45:32 +0000] [1083] [INFO] Booting worker with pid: 1083
+[2025-01-05 22:52:05 +0000] [1047] [INFO] Starting gunicorn 23.0.0
+[2025-01-05 22:52:05 +0000] [1047] [INFO] Listening at: http://0.0.0.0:8000 (1047)
+[2025-01-05 22:52:05 +0000] [1047] [INFO] Using worker: sync
+[2025-01-05 22:52:05 +0000] [1048] [INFO] Booting worker with pid: 1048
+[2025-01-05 22:53:05 +0000] [1047] [INFO] Handling signal: hup
+[2025-01-05 22:53:05 +0000] [1047] [INFO] Hang up: Master
+[2025-01-05 22:53:05 +0000] [1047] [ERROR] Worker (pid:1048) was sent SIGHUP!
+[2025-01-05 22:53:05 +0000] [1052] [INFO] Booting worker with pid: 1052
+Not Found: /favicon.ico
+Internal Server Error: /semestres/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/MedWebsite/MedApp/views.py", line 68, in semestre_categories
+    user_semesters = request.user.profile.semestre.all()
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'profile'
+Not Found: /favicon.ico
+Internal Server Error: /semestres/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/MedWebsite/MedApp/views.py", line 68, in semestre_categories
+    user_semesters = request.user.profile.semestre.all()
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'profile'
+[2025-01-05 23:10:00 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1052)
+[2025-01-05 23:10:00 +0000] [1052] [ERROR] Error handling request /staticfiles/Library/css/styles.css
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:10:00 +0000] [1052] [INFO] Worker exiting (pid: 1052)
+[2025-01-05 23:10:00 +0000] [1216] [INFO] Booting worker with pid: 1216
+[2025-01-05 23:10:31 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1216)
+[2025-01-05 23:10:31 +0000] [1216] [ERROR] Error handling request /files/gif_icons/reading-book_dDFYeTt.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:10:31 +0000] [1216] [INFO] Worker exiting (pid: 1216)
+[2025-01-05 23:10:31 +0000] [1220] [INFO] Booting worker with pid: 1220
+[2025-01-05 23:11:02 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1220)
+[2025-01-05 23:11:02 +0000] [1220] [ERROR] Error handling request /files/gif_icons/reading-book_HoYTIFu.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:11:02 +0000] [1220] [INFO] Worker exiting (pid: 1220)
+[2025-01-05 23:11:02 +0000] [1223] [INFO] Booting worker with pid: 1223
+[2025-01-05 23:11:33 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1223)
+[2025-01-05 23:11:33 +0000] [1223] [ERROR] Error handling request /files/gif_icons/reading-book_8SYbbOp.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:11:33 +0000] [1223] [INFO] Worker exiting (pid: 1223)
+[2025-01-05 23:11:33 +0000] [1225] [INFO] Booting worker with pid: 1225
+Requested Range Not Satisfiable: /staticfiles/Library/css/styles.css
+[2025-01-05 23:12:39 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1225)
+[2025-01-05 23:12:39 +0000] [1225] [ERROR] Error handling request /files/gif_icons/reading-book_8SYbbOp.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:12:39 +0000] [1225] [INFO] Worker exiting (pid: 1225)
+[2025-01-05 23:12:39 +0000] [1232] [INFO] Booting worker with pid: 1232
+[2025-01-05 23:13:10 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1232)
+[2025-01-05 23:13:10 +0000] [1232] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:13:10 +0000] [1232] [INFO] Worker exiting (pid: 1232)
+[2025-01-05 23:13:10 +0000] [1236] [INFO] Booting worker with pid: 1236
+[2025-01-05 23:14:22 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1236)
+[2025-01-05 23:14:22 +0000] [1236] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:14:22 +0000] [1236] [INFO] Worker exiting (pid: 1236)
+[2025-01-05 23:14:22 +0000] [1308] [INFO] Booting worker with pid: 1308
+[2025-01-05 23:14:53 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1308)
+[2025-01-05 23:14:53 +0000] [1308] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:14:53 +0000] [1308] [INFO] Worker exiting (pid: 1308)
+[2025-01-05 23:14:53 +0000] [1310] [INFO] Booting worker with pid: 1310
+Not Found: /qcm/1/accounts/login
+Not Found: /favicon.ico
+Not Found: /accounts/login
+Not Found: /accounts/lovin
+Not Found: /accounts/login
+[2025-01-05 23:26:42 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1310)
+[2025-01-05 23:26:42 +0000] [1310] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:26:42 +0000] [1310] [INFO] Worker exiting (pid: 1310)
+[2025-01-05 23:26:42 +0000] [1405] [INFO] Booting worker with pid: 1405
+[2025-01-05 23:27:17 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1405)
+[2025-01-05 23:27:17 +0000] [1405] [ERROR] Error handling request /files/gif_icons/medical-assistant.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:27:17 +0000] [1405] [INFO] Worker exiting (pid: 1405)
+[2025-01-05 23:27:17 +0000] [1409] [INFO] Booting worker with pid: 1409
+[2025-01-05 23:27:48 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1409)
+[2025-01-05 23:27:48 +0000] [1409] [ERROR] Error handling request /files/gif_icons/heartbeat_1.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:27:48 +0000] [1409] [INFO] Worker exiting (pid: 1409)
+[2025-01-05 23:27:48 +0000] [1411] [INFO] Booting worker with pid: 1411
+[2025-01-05 23:28:19 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1411)
+[2025-01-05 23:28:19 +0000] [1411] [ERROR] Error handling request /files/gif_icons/critical-thinking.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:28:19 +0000] [1411] [INFO] Worker exiting (pid: 1411)
+[2025-01-05 23:28:19 +0000] [1414] [INFO] Booting worker with pid: 1414
+[2025-01-05 23:28:50 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1414)
+[2025-01-05 23:28:50 +0000] [1414] [ERROR] Error handling request /files/gif_icons/heart_1.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:28:50 +0000] [1414] [INFO] Worker exiting (pid: 1414)
+[2025-01-05 23:28:50 +0000] [1417] [INFO] Booting worker with pid: 1417
+[2025-01-05 23:38:50 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1417)
+[2025-01-05 23:38:50 +0000] [1417] [ERROR] Error handling request /files/gif_icons/medical-assistant.gif
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 180, in handle_request
+    resp.write_file(respiter)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 393, in write_file
+    if not self.sendfile(respiter):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 383, in sendfile
+    self.sock.sendfile(respiter.filelike, offset=offset, count=nbytes)
+  File "/usr/lib/python3.12/socket.py", line 486, in sendfile
+    return self._sendfile_use_sendfile(file, offset, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 389, in _sendfile_use_sendfile
+    sent = os_sendfile(sockno, fileno, offset, blocksize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:38:50 +0000] [1417] [INFO] Worker exiting (pid: 1417)
+[2025-01-05 23:38:50 +0000] [1566] [INFO] Booting worker with pid: 1566
+[2025-01-05 23:39:33 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1566)
+[2025-01-05 23:39:33 +0000] [1566] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:39:33 +0000] [1566] [INFO] Worker exiting (pid: 1566)
+[2025-01-05 23:39:33 +0000] [1574] [INFO] Booting worker with pid: 1574
+[2025-01-05 23:40:04 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1574)
+[2025-01-05 23:40:04 +0000] [1574] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:40:04 +0000] [1574] [INFO] Worker exiting (pid: 1574)
+[2025-01-05 23:40:04 +0000] [1579] [INFO] Booting worker with pid: 1579
+[2025-01-05 23:40:35 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1579)
+[2025-01-05 23:40:35 +0000] [1579] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:40:35 +0000] [1579] [INFO] Worker exiting (pid: 1579)
+[2025-01-05 23:40:35 +0000] [1601] [INFO] Booting worker with pid: 1601
+[2025-01-05 23:41:07 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1601)
+[2025-01-05 23:41:07 +0000] [1601] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:41:07 +0000] [1601] [INFO] Worker exiting (pid: 1601)
+[2025-01-05 23:41:07 +0000] [1604] [INFO] Booting worker with pid: 1604
+[2025-01-05 23:41:38 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1604)
+[2025-01-05 23:41:38 +0000] [1604] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:41:38 +0000] [1604] [INFO] Worker exiting (pid: 1604)
+[2025-01-05 23:41:38 +0000] [1607] [INFO] Booting worker with pid: 1607
+[2025-01-05 23:42:09 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1607)
+[2025-01-05 23:42:09 +0000] [1607] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:42:09 +0000] [1607] [INFO] Worker exiting (pid: 1607)
+[2025-01-05 23:42:09 +0000] [1610] [INFO] Booting worker with pid: 1610
+[2025-01-05 23:42:40 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1610)
+[2025-01-05 23:42:40 +0000] [1610] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:42:40 +0000] [1610] [INFO] Worker exiting (pid: 1610)
+[2025-01-05 23:42:40 +0000] [1613] [INFO] Booting worker with pid: 1613
+[2025-01-05 23:43:11 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1613)
+[2025-01-05 23:43:11 +0000] [1613] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:43:11 +0000] [1613] [INFO] Worker exiting (pid: 1613)
+[2025-01-05 23:43:11 +0000] [1616] [INFO] Booting worker with pid: 1616
+[2025-01-05 23:43:42 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1616)
+[2025-01-05 23:43:42 +0000] [1616] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:43:42 +0000] [1616] [INFO] Worker exiting (pid: 1616)
+[2025-01-05 23:43:42 +0000] [1619] [INFO] Booting worker with pid: 1619
+[2025-01-05 23:44:13 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1619)
+[2025-01-05 23:44:13 +0000] [1619] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:44:13 +0000] [1619] [INFO] Worker exiting (pid: 1619)
+[2025-01-05 23:44:13 +0000] [1622] [INFO] Booting worker with pid: 1622
+[2025-01-05 23:44:45 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1622)
+[2025-01-05 23:44:45 +0000] [1622] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:44:45 +0000] [1622] [INFO] Worker exiting (pid: 1622)
+[2025-01-05 23:44:45 +0000] [1624] [INFO] Booting worker with pid: 1624
+[2025-01-05 23:45:16 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1624)
+[2025-01-05 23:45:16 +0000] [1624] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:45:16 +0000] [1624] [INFO] Worker exiting (pid: 1624)
+[2025-01-05 23:45:16 +0000] [1630] [INFO] Booting worker with pid: 1630
+[2025-01-05 23:45:47 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1630)
+[2025-01-05 23:45:47 +0000] [1630] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:45:47 +0000] [1630] [INFO] Worker exiting (pid: 1630)
+[2025-01-05 23:45:47 +0000] [1637] [INFO] Booting worker with pid: 1637
+[2025-01-05 23:46:18 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1637)
+[2025-01-05 23:46:18 +0000] [1637] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:46:18 +0000] [1637] [INFO] Worker exiting (pid: 1637)
+[2025-01-05 23:46:18 +0000] [1640] [INFO] Booting worker with pid: 1640
+[2025-01-05 23:46:49 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1640)
+[2025-01-05 23:46:49 +0000] [1640] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:46:49 +0000] [1640] [INFO] Worker exiting (pid: 1640)
+[2025-01-05 23:46:49 +0000] [1642] [INFO] Booting worker with pid: 1642
+[2025-01-05 23:47:20 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1642)
+[2025-01-05 23:47:20 +0000] [1642] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:47:20 +0000] [1642] [INFO] Worker exiting (pid: 1642)
+[2025-01-05 23:47:20 +0000] [1644] [INFO] Booting worker with pid: 1644
+[2025-01-05 23:47:51 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1644)
+[2025-01-05 23:47:51 +0000] [1644] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:47:51 +0000] [1644] [INFO] Worker exiting (pid: 1644)
+[2025-01-05 23:47:51 +0000] [1647] [INFO] Booting worker with pid: 1647
+[2025-01-05 23:48:22 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1647)
+[2025-01-05 23:48:22 +0000] [1647] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:48:22 +0000] [1647] [INFO] Worker exiting (pid: 1647)
+[2025-01-05 23:48:23 +0000] [1650] [INFO] Booting worker with pid: 1650
+[2025-01-05 23:48:54 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1650)
+[2025-01-05 23:48:54 +0000] [1650] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:48:54 +0000] [1650] [INFO] Worker exiting (pid: 1650)
+[2025-01-05 23:48:54 +0000] [1652] [INFO] Booting worker with pid: 1652
+[2025-01-05 23:49:25 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1652)
+[2025-01-05 23:49:25 +0000] [1652] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:49:25 +0000] [1652] [INFO] Worker exiting (pid: 1652)
+[2025-01-05 23:49:25 +0000] [1655] [INFO] Booting worker with pid: 1655
+[2025-01-05 23:49:56 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1655)
+[2025-01-05 23:49:56 +0000] [1655] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:49:56 +0000] [1655] [INFO] Worker exiting (pid: 1655)
+[2025-01-05 23:49:56 +0000] [1658] [INFO] Booting worker with pid: 1658
+[2025-01-05 23:50:27 +0000] [1047] [CRITICAL] WORKER TIMEOUT (pid:1658)
+[2025-01-05 23:50:27 +0000] [1658] [ERROR] Error handling request /qcm/1/
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 183, in handle_request
+    resp.write(item)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py", line 354, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/util.py", line 298, in write
+    sock.sendall(data)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-01-05 23:50:27 +0000] [1658] [INFO] Worker exiting (pid: 1658)
+[2025-01-05 23:50:27 +0000] [1665] [INFO] Booting worker with pid: 1665
+Forbidden (CSRF token missing.): /dashboard/accounts/login/
+Not Found: /wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /robots.txt
+Not Found: /url('https://fonts.googleapis.com/css2
+Not Found: /favicon.ico
+Not Found: /.env
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /media/system/js/core.js
+Not Found: /wp-includes/js/jquery/jquery.js
+Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /favicon.ico
+Forbidden (CSRF token from POST incorrect.): /dashboard/accounts/login/
+Not Found: /favicon.ico
+Not Found: /.git/config
+The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+Traceback (most recent call last):
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = middleware_method(
+               ^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/middleware/csrf.py", line 465, in process_view
+    self._check_token(request)
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/middleware/csrf.py", line 368, in _check_token
+    request_csrf_token = request.POST.get("csrfmiddlewaretoken", "")
+                         ^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/core/handlers/wsgi.py", line 93, in _get_post
+    self._load_post_and_files()
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/http/request.py", line 374, in _load_post_and_files
+    self._post, self._files = self.parse_file_upload(self.META, data)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/http/request.py", line 322, in parse_file_upload
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/http/multipartparser.py", line 124, in parse
+    return self._parse()
+           ^^^^^^^^^^^^^
+  File "/root/MedProject/venv/lib/python3.12/site-packages/django/http/multipartparser.py", line 204, in _parse
+    raise TooManyFieldsSent(
+django.core.exceptions.TooManyFieldsSent: The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+Bad Request: /Medscholar-admins/Quiz/quiz/1/change/
+Not Found: /qcm/2/accounts/login
+Not Found: /qcm/2/accounts/login
+Not Found: /qcm/2/accounts/login
+Not Found: /login
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /qcm/1/
+Not Found: /qcm/1/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.env
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php

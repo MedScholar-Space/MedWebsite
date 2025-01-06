@@ -48,10 +48,7 @@ color: white;
 }
 </style>
 <div class="container">
-<h1 >
-    Quiz List:
 
-</h1>
 
 <div class="row">
   
@@ -61,7 +58,7 @@ color: white;
           <div  class="card-body">
             <h5 class="card-title">{{i.name}}</h5>
             <p class="card-text">{{i.description}}</p>
-            <a href="{% url 'quiz_view' i.id %}" class="btn btn-primary">Start Quiz</a>
+            <a href="{% url 'quiz_view' i.id %}" class="btn btn-primary">Commencer votre QCM</a>
           </div>
         </div>
       </div>
