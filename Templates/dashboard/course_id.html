@@ -7,47 +7,64 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
  <style >
     canvas{
-        width: 100%;
+        width: 80%;
+        align-self: center;
+        justify-self: center;
+        display: flex;
     }
  </style>
 </head>
 <body style="place-content: center;place-items: center;">
 
-    <script>
-        const pdfUrl = "{{course.file.url}}";
 
-// Load the PDF file
-pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-    const totalPages = pdf.numPages;
-    console.log(`Total Pages: ${totalPages}`);
+<script>
+    const pdfUrl = "{{course.file.url}}";
 
-    for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
-        pdf.getPage(pageNumber).then(page => {
-            const viewport = page.getViewport({ scale: 2 });
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+    // Load the PDF file
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+        const totalPages = pdf.numPages;
+        console.log(`Total Pages: ${totalPages}`);
 
-            const renderContext = {
-                canvasContext: context,
-                viewport: viewport,
-            };
+        // Function to render a single page
+        const renderPage = (pageNumber) => {
+            pdf.getPage(pageNumber).then(page => {
+                const viewport = page.getViewport({ scale: 2 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
-            // Render the page into the canvas context
-            page.render(renderContext).promise.then(() => {
-                document.body.appendChild(canvas); // Append canvas to the document body
-                console.log(`Rendered page ${pageNumber}`);
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport,
+                };
+
+                // Render the page into the canvas context
+                page.render(renderContext).promise.then(() => {
+                    document.body.appendChild(canvas); // Append canvas to the document body
+                    console.log(`Rendered page ${pageNumber}`);
+                    
+                    // Render the next page
+                    if (pageNumber < totalPages) {
+                        renderPage(pageNumber + 1);
+                    }
+                }).catch(error => {
+                    console.error(`Error rendering page ${pageNumber}: ${error}`);
+                });
             }).catch(error => {
-                console.error(`Error rendering page ${pageNumber}: ${error}`);
+                console.error(`Error getting page ${pageNumber}: ${error}`);
             });
-        }).catch(error => {
-            console.error(`Error getting page ${pageNumber}: ${error}`);
-        });
-    }
-}).catch(error => {
-    console.error(`Error loading PDF: ${error}`);
-});
-    </script>
+        };
+
+        // Start rendering from the first page
+        renderPage(1);
+    }).catch(error => {
+        console.error(`Error loading PDF: ${error}`);
+    });
+</script>
+
+
+
 </body>
 </html>
+

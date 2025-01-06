@@ -20,7 +20,8 @@ class Question(models.Model):
     explication = models.TextField()
     def __str__(self):
         return self.text
-
+    class Meta:
+        ordering= ['id']	
 class Answer(models.Model):
     question = models.ForeignKey(Question, related_name='answers', on_delete=models.CASCADE)
     text = models.CharField(max_length=255)
@@ -28,7 +29,8 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.text
-    
+    class Meta:
+        ordering= ['id']
 class Comment(models.Model):
     Quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
     Your_Name = models.CharField(max_length=80,)

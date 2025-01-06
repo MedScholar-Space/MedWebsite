@@ -93,7 +93,7 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
-		<a class='dropdown-item' href="https://discord.com/invite/pmQXAFwRWf" >Discord Server</a>
+           <a class='dropdown-item' href="https://discord.com/invite/pmQXAFwRWf"  >Discord Server</a>
           <form action="{% url 'logout' %}" method="post">{% csrf_token %}
             <a class="dropdown-item" href="{% url 'logout' %}" ><input  class=" button-fonts dropdown-item" type="submit" value="Se déconnecter" ></a>
            </form> 

@@ -6419,3 +6419,113 @@ Not Found: /wp-admin/setup-config.php
 Not Found: /wordpress/wp-admin/setup-config.php
 Not Found: /wp-admin/setup-config.php
 Not Found: /wordpress/wp-admin/setup-config.php
+Not Found: /.git/config
+[2025-01-06 10:58:51 +0000] [1537] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 10:58:51 +0000] [1537] [INFO] Listening at: http://0.0.0.0:8000 (1537)
+[2025-01-06 10:58:51 +0000] [1537] [INFO] Using worker: sync
+[2025-01-06 10:58:51 +0000] [1538] [INFO] Booting worker with pid: 1538
+Not Found: /.git/config
+Not Found: /.well-known/traffic-advice
+Not Found: /qcm/accounts/login
+Not Found: /qcm/accounts/login
+Not Found: /qcm/accounts/login
+Not Found: /robots.txt
+[2025-01-06 11:37:42 +0000] [1802] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 11:37:42 +0000] [1802] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 11:37:42 +0000] [1802] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 11:37:43 +0000] [1802] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 11:37:43 +0000] [1802] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 11:37:44 +0000] [1802] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 11:37:44 +0000] [1802] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 11:37:45 +0000] [1802] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 11:37:45 +0000] [1802] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 11:37:46 +0000] [1802] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 11:37:46 +0000] [1802] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 11:37:47 +0000] [1802] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2025-01-06 11:38:37 +0000] [1537] [ERROR] Worker (pid:1538) was sent SIGHUP!
+[2025-01-06 11:38:37 +0000] [1537] [INFO] Handling signal: hup
+[2025-01-06 11:38:37 +0000] [1537] [INFO] Hang up: Master
+[2025-01-06 11:38:37 +0000] [1807] [INFO] Booting worker with pid: 1807
+Not Found: /url('https://fonts.googleapis.com/css2
+[2025-01-06 13:16:15 +0000] [1589] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:16:15 +0000] [1589] [INFO] Listening at: http://0.0.0.0:8000 (1589)
+[2025-01-06 13:16:15 +0000] [1589] [INFO] Using worker: sync
+[2025-01-06 13:16:15 +0000] [1590] [INFO] Booting worker with pid: 1590
+[2025-01-06 13:16:20 +0000] [1592] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:16:20 +0000] [1592] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:16:20 +0000] [1592] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:16:21 +0000] [1592] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:16:21 +0000] [1592] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:16:22 +0000] [1592] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:16:22 +0000] [1592] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:16:23 +0000] [1592] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:16:23 +0000] [1592] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:16:24 +0000] [1592] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:16:24 +0000] [1592] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:16:25 +0000] [1592] [ERROR] Can't connect to ('0.0.0.0', 8000)
+Not Found: /wp-admin/setup-config.php
+Not Found: /wp-admin/setup-config.php
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+[2025-01-06 13:35:30 +0000] [1941] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:35:30 +0000] [1941] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:35:30 +0000] [1941] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:35:31 +0000] [1941] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:35:31 +0000] [1941] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:35:32 +0000] [1941] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:35:32 +0000] [1941] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:35:33 +0000] [1941] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:35:33 +0000] [1941] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:35:34 +0000] [1941] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:35:34 +0000] [1941] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:35:35 +0000] [1941] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2025-01-06 13:37:53 +0000] [1950] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:37:53 +0000] [1950] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:37:53 +0000] [1950] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:37:54 +0000] [1950] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:37:54 +0000] [1950] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:37:55 +0000] [1950] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:37:55 +0000] [1950] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:37:56 +0000] [1950] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:37:56 +0000] [1950] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:37:57 +0000] [1950] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:37:57 +0000] [1950] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:37:58 +0000] [1950] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2025-01-06 13:38:30 +0000] [1965] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:38:30 +0000] [1965] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:38:30 +0000] [1965] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:38:31 +0000] [1965] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:38:31 +0000] [1965] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:38:32 +0000] [1965] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:38:32 +0000] [1965] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:38:33 +0000] [1965] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:38:33 +0000] [1965] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:38:34 +0000] [1965] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2025-01-06 13:38:34 +0000] [1965] [ERROR] connection to ('0.0.0.0', 8000) failed: [Errno 98] Address already in use
+[2025-01-06 13:38:35 +0000] [1965] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2025-01-06 13:43:52 +0000] [1102] [INFO] Starting gunicorn 23.0.0
+[2025-01-06 13:43:52 +0000] [1102] [INFO] Listening at: http://0.0.0.0:8000 (1102)
+[2025-01-06 13:43:52 +0000] [1102] [INFO] Using worker: sync
+[2025-01-06 13:43:52 +0000] [1103] [INFO] Booting worker with pid: 1103
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /dashboard/test*
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+[2025-01-06 13:46:13 +0000] [1102] [INFO] Handling signal: hup
+[2025-01-06 13:46:13 +0000] [1102] [INFO] Hang up: Master
+[2025-01-06 13:46:13 +0000] [1102] [ERROR] Worker (pid:1103) was sent SIGHUP!
+[2025-01-06 13:46:13 +0000] [1149] [INFO] Booting worker with pid: 1149
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico

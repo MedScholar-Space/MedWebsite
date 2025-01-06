@@ -45,7 +45,7 @@
     const questions = [
         {% for question in quiz.questions.all %}
         {
-            id: {{ question.id }},
+id:{{question.id}},
             text: "{{ question.text|escapejs }}",
             {% if question.image %} image: "{{ question.image.url|default:'' }}",{% else %}{% endif %}
             answers: [
@@ -57,7 +57,7 @@
                 }{% if not forloop.last %},{% endif %}
                 {% endfor %}
             ],
-            explication: "{{ question.explication|escapejs }}"
+            explication: "{{ question.explication|linebreaks|escapejs }}"
         }{% if not forloop.last %},{% endif %}
         {% endfor %}
     ];
@@ -69,7 +69,7 @@
     // Store selected answers dynamically
     const selectedAnswersMap = {};
 
-    function loadQuestion(index) {
+ function loadQuestion(index) {
         const question = questions[index];
         const $quizContainer = $('#quizContainer');
         
@@ -77,15 +77,14 @@
         $quizContainer.empty();
 
         // Question text
-        $quizContainer.append(`<h4 class="mb-3">${question.text}</h4>`);
-
+ $quizContainer.append(`<h4 class="mb-3">${question.text}</h4>`);
         // Image (if exists)
         if (question.image) {
-            $quizContainer.append(`<img src="${question.image}" class="img-fluid mb-3" alt="Question Image">`);
+	  $quizContainer.append(`<img src="${question.image}" class="img-fluid mb-3" alt="Question Image">`);
         }
 
         // Answers
-        const $answerContainer = $('<div class="answers-container"></div>');
+        const $answerContainer =  $('<div class="answers-container"></div>');
         question.answers.forEach(answer => {
             const $answerDiv = $(`
                 <div class="form-check mb-2">
