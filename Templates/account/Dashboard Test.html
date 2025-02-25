@@ -13,6 +13,17 @@
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
       <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
       <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-STJ5NC9MK7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-STJ5NC9MK7');
+</script>
+
       {% block links %}
       
       {% endblock links %}
@@ -27,7 +38,6 @@
       }
       .center-text{
             line-height:2.4em;
-
       }
       .row{
         margin-bottom: 4em!important;
@@ -93,7 +103,7 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
-		<a class='dropdown-item' href="https://discord.com/invite/pmQXAFwRWf" >Discord Server</a>
+		<a style="text-align:center;"  class='dropdown-item' href="https://discord.com/invite/pmQXAFwRWf" >Discord Server</a>
           <form action="{% url 'logout' %}" method="post">{% csrf_token %}
             <a class="dropdown-item" href="{% url 'logout' %}" ><input  class=" button-fonts dropdown-item" type="submit" value="Se déconnecter" ></a>
            </form> 

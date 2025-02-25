@@ -32,11 +32,11 @@ def home(request):
     user_semesters = request.user.profile.semestre.all()
 
     if categorie ==None and sub_categories==None :
-        object_list = Quiz.objects.filter(semestre__in= user_semesters)
+        object_list = Quiz.objects.filter(semestre__in= user_semesters).order_by("-name")
     elif categorie is not None:
-        object_list = Quiz.objects.filter(categorie__module= categorie,semestre__in= user_semesters)
+        object_list = Quiz.objects.filter(categorie__module= categorie,semestre__in= user_semesters).order_by("-name")
     elif sub_categories is not None:
-        object_list = Quiz.objects.filter(sub_categorie__sous_module=sub_categories,semestre__in= user_semesters)
+        object_list = Quiz.objects.filter(sub_categorie__sous_module=sub_categories,semestre__in= user_semesters).order_by('-name')
     categories  = Category.objects.filter(semestre__in= user_semesters)
 
     context ={'d':categories,'object_list':object_list}

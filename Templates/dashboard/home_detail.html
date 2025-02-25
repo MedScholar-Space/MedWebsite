@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-header">
             <h2>{{ quiz.name }}</h2>
-            <p>{{ quiz.description }}</p>
+
         </div>
         <div class="card-body">
             <form id="quizForm" method="post" enctype="multipart/form-data">
@@ -345,7 +345,9 @@ $.ajax({
 
 });
 
-document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+if(window.innerWidth>991){ 
+ document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+}
 
 </script>
 

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{% static 'files/MedScholar Space.svg' %}" type="image/x-icon">
     <title>{{course.titre}}</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
  <style >
+    canvas{
+        width: 50%;
+        align-self: center;
+        justify-self: center;
+        display: flex;
+    }
+@media screen and (max-width:991px){
+
     canvas{
         width: 80%;
         align-self: center;
         justify-self: center;
         display: flex;
     }
+
+
+}
  </style>
 </head>
 <body style="place-content: center;place-items: center;">

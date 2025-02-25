@@ -68,7 +68,9 @@ color: white;
 </div>
 </div>
 <script>
-  document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+if(window.innerWidth>991 ){
+ document.querySelector(".sb-nav-fixed").classList.add("sb-sidenav-toggled");
+}
 </script>
 {% else %}
 <div class="Not-approved">

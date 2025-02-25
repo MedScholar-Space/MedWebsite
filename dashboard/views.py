@@ -113,7 +113,7 @@ def dashboard_Test(request):
 
 def register(request):
     semestres = Semestre.objects.all()
-    semester1 = Semestre.objects.get(semestre="Free Trial")
+    semester1 = Semestre.objects.get(semestre="Free")
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         profile_form = ProfileRegistration(request.POST)
