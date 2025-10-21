@@ -34,10 +34,6 @@ LOGOUT_REDIRECT_URL = 'home'
 # Application definition
 EMAIL_HOST = 'smtp.gmail.com'
 
-EMAIL_HOST_USER = 'medscholarspace@gmail.com'
-EMAIL_HOST_PASSWORD = 'kucr thqw mveb kweb'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 
 
